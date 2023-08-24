@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor's Portal</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" href="{% static 'portal.css' %}">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+    
+    <nav class="navSection">
+        <h3>Victor's Portal</h3>
+        {% if user.is_authenticated %}
+        <ul>
+            <a href="{% url 'index' %}"><li>Home</li></a>
+            <a href="{% url 'portal' %}"><li>Portal</li></a>
+            <a href="{% url 'signout' %}"><li class="login">Logout</li></a>
+            <li class="username"> @{{user.username}}</li>
+        </ul>
+        {% else %}
+        <ul>
+            <a href="{% url 'index' %}"><li>Home</li></a>
+            <a href="{% url 'signin' %}"><li>Portal</li></a>
+            <a href="{% url 'signin' %}"><li class="login">Login</li></a>
+        </ul>
+        {% endif %}
+
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+</body>
+<script>
+    const textElement = document.querySelector('.disappear');
+    setTimeout(() => {
+      textElement.style.display = 'none';
+    }, 3000);
+  </script>
+</html>

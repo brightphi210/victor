@@ -1,0 +1,33 @@
+
+{% extends 'main.html' %}
+<h2>This is Portal Page</h2>
+{% block content %}
+<section class="portalSectionDiv">
+    {% for message in messages %}
+    <p class="disappear">{{ message }}</p>
+    {% endfor %}
+    <h2>Welcome <span>{{user.first_name}} {{user.last_name}}</span></h2>
+    
+    {% if scores %}
+    {% for score in scores %}
+    <h3>Below are Your Score for First Semester Exam</h3>
+        <div class="portalSection">
+            <p>Maths : {{score.maths}}</p>
+            <hr>
+            <p>English : {{score.english}}</p>
+            <hr>
+            <p>Physics : {{score.physics}}</p>
+            <hr>
+            <p>Biology : {{score.biology}}</p>
+            <hr>
+        </div>
+    {% endfor %}    
+    {% else %}
+        <div class="portalSection1">
+            <p>👋👋Hello @"{{user.username}}" your score has not been uploaded yet
+                <br> please check victor's portal back later. . . 
+            </p>
+        </div>
+    {% endif %} 
+</section>
+{% endblock %}

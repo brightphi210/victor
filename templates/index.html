@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+<div class="generalDiv">
+    {% block content %}
+    {% for message in messages %}
+    <p class="disappear">{{ message }}</p>
+    {% endfor %}
+    <section class="indexSectionOne">
+        <div class="indexSectionOneDesc">
+            <p>Welcome to </p>
+            <h2>Victor's Result <br> Archive <span>Portal</span></h2>
+            <p>with Victor's Portal you can check your result of exams you have written so far </p>
+            
+            {% if user.is_authenticated %}
+                <a href="{% url 'portal' %}"><button>Check Result</button></a>
+            {% else %}
+                <a href="{% url 'signin' %}"><button>Check Result</button></a>
+            {% endif %}
+        </div>
+        <img src="/static/images/Group 2.png" alt="">
+    </section>
+</div>
+{% endblock %}

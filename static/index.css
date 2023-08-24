@@ -1,0 +1,73 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+    text-decoration: none;
+}
+
+
+body{
+    background-color: white;
+}
+
+.generalDiv{
+    padding: 60px 0;
+}
+
+.indexSectionOne{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 100px 10%;
+    align-items: center;
+}
+
+
+.indexSectionOneDesc{
+    width: 100%;
+}
+
+
+.indexSectionOneDesc h2{
+    font-size: 70px;
+}
+
+
+.indexSectionOneDesc span{
+    color: rgb(113, 5, 123);
+}
+
+.indexSectionOneDesc button{
+    background-color:blueviolet;
+    color: white;
+    font-size: 14px;
+    padding: 15px 40px;
+    border:none;
+    margin-top: 20px;
+    width: 30%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.indexSectionOneDesc button:hover{
+    background-color: brown;
+    transition: all 0.5s ease;
+}
+
+.indexSectionOne img{
+    width: 100%;
+    position: relative;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+
+
